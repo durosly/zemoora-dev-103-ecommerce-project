@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
+
+:root {
+	--color-primary: 0 86% 26%;
+	--padding-horizontal: 20px;
+	--border-radius-primary: 10px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+* {
+	font-family: inherit;
+}
+
+h1 {
+	color: hsl(var(--color-primary) / 0.5);
+	font-size: 20px;
+	font-weight: bold;
+	margin-block: 10px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-inline: var(--padding-horizontal);
+}
+
+/* header button {
+	border: none;
+	color: hsl(var(--color-primary) / 1);
+} */
+header :where(.bar, a) {
+	border: none;
+	color: hsl(var(--color-primary) / 1);
+}
+
+header input[type="checkbox"] {
+	display: none;
+}
+
+.side-bar-menu {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+	width: 100vw;
+	z-index: 99999;
+	background-color: hsl(0 0% 0% / 0.2);
+	transform: translateX(-100%);
+}
+
+#menu-toggler:checked + .side-bar-menu {
+	transform: translateX(0);
+}
+
+.side-bar {
+	--spacing: 20px;
+	background-color: hsl(var(--color-primary) / 1);
+	height: 100%;
+	width: calc(80% - var(--spacing));
+	padding: var(--spacing);
+	display: flex;
+	flex-direction: column;
+}
+
+.side-bar label {
+	align-self: flex-end;
+	color: hsl(0 0% 100%);
+}
+
+.side-bar ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.side-bar nav a {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 18px;
+	padding: 3px 10px;
+	text-transform: capitalize;
+}
+
+.side-bar a i {
+	width: 20px;
+}
+
+.side-bar a {
+	color: hsl(0 0% 100%);
+	text-decoration: none;
+}
+
+.slider-container {
+	padding-inline: var(--padding-horizontal);
+	margin-top: 24px;
+}
+
+.slider {
+	height: 184px;
+	overflow: hidden;
+	border-radius: var(--border-radius-primary);
+}
+
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slider-counter {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
+	margin-top: 10px;
+}
+
+.slider-counter > div {
+	width: 5px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 1px solid hsl(var(--color-primary) / 1);
+	background-color: hsl(var(--color-primary) / 1);
+}
+
+.slider-counter .current {
+	background-color: transparent;
+}
