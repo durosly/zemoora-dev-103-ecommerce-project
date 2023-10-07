@@ -131,3 +131,84 @@ header input[type="checkbox"] {
 .slider-counter .current {
 	background-color: transparent;
 }
+
+.daily-food-suggestion {
+	margin-top: 30px;
+	margin-inline: var(--padding-horizontal);
+	border-radius: var(--border-radius-primary);
+	padding-inline: 20px;
+	padding-block: 10px;
+	background-color: hsl(var(--color-primary) / 0.2);
+}
+
+.daily-food-suggestion h2 {
+	margin-top: 0;
+	font-size: 16px;
+	font-weight: normal;
+	color: hsl(var(--color-primary) / 1);
+	text-align: center;
+}
+
+.food-suggest-slider-container {
+	--spacing: 20px;
+	display: flex;
+	gap: var(--spacing);
+	overflow: hidden;
+	position: relative;
+}
+
+.food-suggest-slider-container .img-wrapper {
+	width: calc((100% - var(--spacing) * 2) / 3);
+	border-radius: var(--border-radius-primary);
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.food-suggest-slider-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.food-suggest-slider-btn {
+	position: absolute;
+	bottom: 50%;
+	transform: translateY(50%);
+	background-color: hsl(var(--color-primary) / 0.2);
+	border: none;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	font-size: 16px;
+	padding: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: hsl(var(--color-primary) / 1);
+}
+
+.food-suggest-slider-btn.next {
+	right: 0;
+}
+
+.time-interval {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
+}
+
+.time-interval button {
+	background-color: transparent;
+	color: hsl(var(--color-primary) / 1);
+	border: none;
+}
+
+.time-interval .active::after {
+	content: "";
+	display: block;
+	margin-inline: auto;
+	width: 20px;
+	height: 5px;
+	border-radius: 200px;
+	background-color: hsl(var(--color-primary) / 1);
+}
